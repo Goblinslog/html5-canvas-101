@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Learning the basics of canvas</title>
+<meta charset="utf-8">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<style>
+		body {background-color: pink;
+		}
+	</style>
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	
+  ctx.attr("width", canvas.width()); 
+  ctx.attr("height", canvas.height());
+	
+	ctx.fillStyle ="red";
+	ctx.fillRect(40, 40, 100, 100);
+	
+	ctx.beginPath();
+	ctx.fillStyle ="blue";
+	ctx.arc(230, 90, 50, 0, Math.PI*2, false); 
+	ctx.closePath();
+	ctx.fill();
+
+ctx.clearRect(0, 0, canvas.width(), canvas.height()); 	
+
+});
+</script>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="900">
+<!-- Insert fallback content here -->
+</canvas>
+</body>
+</html>
+
+
+
+
+	
+	
+//	ctx.fillStyle = "#FF3458"; 
+//	ctx.fillRect(30, 270, 100, 100); 
+//	
+//	ctx.beginPath();
+//	ctx.arc(50, 250, 50, 0, Math.PI*2, false);
+//	ctx.closePath(); 
+//	ctx.fill();
+//
+//	ctx.clearRect(50, 250, 60, 50);
+
+	
+//	ctx.fillStyle = "rgb(255, 0, 0)";
+//	ctx.fillRect(40, 90, 100, 100); 
+
+//	ctx.beginPath();
+//	ctx.arc(230,135, 50, 0, Math.PI*2, false); 
+//	ctx.closePath();
+//	ctx.fill();
+
+//	
+
+	
+

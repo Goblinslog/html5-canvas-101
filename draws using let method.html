@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Learning the basics of canvas</title>
+<meta charset="utf-8">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+	canvas{
+	  border: 1px solid red;
+	}
+
+</style>
+</head>
+<body>
+<canvas id="canvas" width="600" height="400"></canvas>
+		<script>
+			let c = document.getElementById("canvas");
+			console.log(c);
+			let ctx = c.getContext("2d");
+			//console.log(ctx);
+			////////////////////////////////////////////////////
+			//ctx.fillStyle = '#212121';
+			ctx.moveTo(100, 50);
+			ctx.lineTo(300, 100);
+			ctx.moveTo(10, 10);
+			ctx.lineTo(5, 500);
+			ctx.stroke(); 
+
+			ctx.beginPath();
+			ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+			ctx.stroke(); 	
+		</script>	
+			
+				
+</body>
+</html>

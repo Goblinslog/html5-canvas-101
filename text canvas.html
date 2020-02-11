@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Learning the basics of canvas</title>
+<meta charset="utf-8">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	
+	
+	// Writes text and change the size and font 3 lines
+	var text = "Hello!"; // Writes the text
+	ctx.font = "30px Arial"; // Change the size and font
+	ctx.fillText(text, 40, 40); // x,y coordinates positioning the text
+	
+	var text = "Hello, World!";
+	ctx.fillStyle = "#3da8a3";	// Change text colour
+	ctx.font = "italic 30px serif"; 
+	ctx.fillText(text, 40, 80);
+
+	var text = "Hello!";
+	ctx.font = "italic 60px serif"; 
+	ctx.strokeText(text, 40, 140);
+	
+	// Writes text and change the size and font other way
+	ctx.font = "30px Arial"; // Change the size and font
+	ctx.fillStyle = "#3da8a3";	// Change text colour
+	ctx.fillText("Hello World",40,200); // Writes the text + x,y coordinates positioning the text
+	
+
+	
+});
+</script>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="900">
+<!-- Insert fallback content here -->
+</canvas>
+</body>
+</html>
+
