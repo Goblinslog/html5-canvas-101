@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Learning the basics of canvas</title>
+<meta charset="utf-8">
+	<style>
+		h3 {font-family: "Roboto";}
+		canvas {background-color: black;}
+	</style>	
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>	<script type="text/javascript">
+$(document).ready(function() {
+	
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	
+
+// Animation 
+
+ const circle = {
+   x: 30,
+   y: 30,
+   size: 20,
+   dx: 4,
+   dy: 5
+ };
+
+ function drawCircle() {
+   ctx.beginPath();
+   ctx.arc(circle.x, circle.y, circle.size, 0, Math.PI * 2);
+   ctx.fillStyle = 'purple';
+   ctx.fill();
+ }
+
+ function update() {
+   ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+   drawCircle();
+
+    //change position
+   circle.x += circle.dx;
+   circle.y += circle.dy;
+
+   // Detect side walls
+   if (circle.x + circle.size > canvas.width || circle.x - circle.size < 0) {
+     circle.dx *= -1;
+   }
+
+    //Detect top and bottom walls
+   if (circle.y + circle.size > canvas.height || circle.y - circle.size < 0) {
+   circle.dy *= -1;
+   }
+
+   requestAnimationFrame(update);
+ }
+
+		
+ update();		
+		
+
+});
+</script>
+</head>
+<body>	
+<canvas id="myCanvas" width="400" height="400">
+<!-- Insert fallback content here -->
+</canvas>	
+	<h3>Bouncing ball</h3>
+</body>
+</html>
+	

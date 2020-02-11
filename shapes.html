@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Learning the basics of canvas</title>
+<meta charset="utf-8">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	
+	// Draws outlined triangle 
+	ctx.beginPath();
+	ctx.lineWidth = 35;
+	ctx.strokeStyle = "#00ff12";
+	ctx.moveTo(500, 500);
+	ctx.lineTo(500, 1000);
+	ctx.lineTo(1000, 1000);
+	ctx.closePath();
+	ctx.stroke();
+	
+	
+	// Draws filled triangle 	
+	ctx.beginPath();
+	ctx.fillStyle = "#FFCC00";
+	ctx.moveTo(150, 100);
+	ctx.lineTo(0, 300);
+	ctx.lineTo(300, 300);
+	ctx.closePath();
+	ctx.fill();
+	
+	// Draws line 	
+	ctx.lineWidth = 5; // Thickness
+	ctx.strokeStyle = "#3da8a3";	
+	ctx.beginPath();
+	ctx.moveTo(40, 180);
+	ctx.lineTo(420, 180);  
+	ctx.closePath();
+	ctx.stroke();
+	
+	
+	ctx.lineWidth = 35;
+	ctx.strokeStyle = "#cecece";
+	ctx.beginPath(); // Start the path
+	ctx.moveTo(40, 690); // Set the path origin
+	ctx.lineTo(150, 790); // Set the path destination 	
+	ctx.closePath(); // Close the path
+	ctx.stroke(); // Outline the path
+
+	ctx.strokeStyle = "#FF0458";
+    ctx.strokeRect(450, 70, 200, 500);	// Outlined ractangle
+	
+	
+	ctx.fillStyle = "#FF3458"; 
+    ctx.fillRect(10, 530, 200, 100); // Solid ractangle
+	
+	ctx.lineWidth = 5; // Make lines thick 
+	ctx.strokeStyle = "rgb(255, 0, 0)";
+	ctx.strokeRect(40, 40, 100, 100); // Red square
+	
+	
+	ctx.lineWidth = 25;
+	ctx.strokeRect(180, 40, 100, 100); // Red square
+	
+	
+	ctx.lineWidth = 10; // Make lines even thicker 
+	ctx.strokeStyle = "#000000";
+	ctx.strokeRect(320, 40, 100, 100); // Black square
+
+	
+	ctx.lineWidth = 20; // Make lines even thicker 
+	ctx.strokeStyle = "rgb(0, 0, 0)";
+	ctx.strokeStyle = "#FF0458"; 
+	ctx.beginPath();
+	ctx.moveTo(40, 230);
+	ctx.lineTo(420, 230); // Black line 
+	ctx.closePath();
+	ctx.stroke();
+
+	
+	//Draws circle
+	ctx.beginPath(); // Start the path
+	ctx.fillStyle = "rgb(255, 25, 120)";
+	ctx.arc(120, 300, 90, 0, Math.PI*2, false); // Draw a circle
+	ctx.closePath(); // Close the path
+	ctx.fill(); // Fill the path
+	
+	
+	// Draws a semi-circle
+	ctx.beginPath(); // Start the path
+	ctx.fillStyle = "rgb(255, 125, 200)";
+	ctx.arc(180, 360, 150, 0, Math.PI, false); // Draw a semi-circle
+	ctx.closePath(); // Close the path
+	ctx.fill(); // Fill the path
+
+	
+});
+</script>
+</head>
+<body>
+<canvas id="myCanvas" width="1200" height="1200">
+<!-- Insert fallback content here -->
+</canvas>
+</body>
+</html>
+
+	
